@@ -21,14 +21,9 @@ iframe {
 <iframe id='framey' frameborder = 0></iframe>
 </body>
 <script>
- alert("The URL of this page is: " + window.location.href);
-var urlParams = new URLSearchParams(window.location.search);
-var code = "";
-if(urlParams.has('code'))
-{
-  code = urlParams.get('code');
-  //code = decodeURI(code);
-}
+var url = window.location.href;
+url = url.replace("https://docactive.online/","");
+code = url.replace("/","");
 var url = "https://script.google.com/macros/s/AKfycbw4ocXnlDze2svOEllK0HU7KnaqGs8_6neVYgmQQqFEYgXPbAjT/exec";
 if(code !== "")
 {
