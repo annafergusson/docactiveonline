@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<title>docactive</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="logo_square.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="logo_square.png">
+<style>
+body {
+    margin: 0;           
+}
+iframe {
+    display: block;       
+    background: #ffffff;
+    border: none;        
+    height: 100vh;      
+    width: 100vw;
+}
+</style>
+<body>
+<iframe id='framey' frameborder = 0></iframe>
+</body>
+<script>
+ alert("The URL of this page is: " + window.location.href);
+var urlParams = new URLSearchParams(window.location.search);
+var code = "";
+if(urlParams.has('code'))
+{
+  code = urlParams.get('code');
+  //code = decodeURI(code);
+}
+var url = "https://script.google.com/macros/s/AKfycbw4ocXnlDze2svOEllK0HU7KnaqGs8_6neVYgmQQqFEYgXPbAjT/exec";
+if(code !== "")
+{
+	url = url + "?code=" + encodeURI(code);
+}
+document.getElementById("framey").src = url;
+</script>
+</html>
